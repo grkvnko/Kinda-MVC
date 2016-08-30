@@ -12,6 +12,6 @@ class DB_access
 
 class SITE_CONFIG
 {
-    const site_absolute_url = '/grkvnko/grkvnko.me/';
+    const site_absolute_url = '/grkvnko.me/';
     public static $reg;
 }
