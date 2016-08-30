@@ -1,0 +1,9 @@
+Options -Indexes
+ErrorDocument 404 /grkvnko/grkvnko.me/
+ErrorDocument 403 /grkvnko/grkvnko.me/
+RewriteEngine On
+
+RewriteBase /grkvnko/grkvnko.me/
+
+RewriteCond %{REQUEST_URI} !(^(.*\.png|.*\.jpg|.*\.css|.*\.js)$) [NC]
+RewriteRule . index.php [NC,L]
