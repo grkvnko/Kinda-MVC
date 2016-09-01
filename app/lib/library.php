@@ -78,10 +78,8 @@ class PostStuff
         $post_text = str_replace('#>', '</div>',  $post_text);
         $post_text = str_replace('<p#', '<p>', $post_text);
         $post_text = str_replace('#p>', '</p>',  $post_text);
-
         $post_text = str_replace('#pic_', '<img src="'.SITE_CONFIG::site_absolute_url.'pic/'. $post_id .'/',  $post_text);
         $post_text = str_replace('_pic#', '.jpg">',  $post_text);
-        
         return $post_text;
     }
 }
