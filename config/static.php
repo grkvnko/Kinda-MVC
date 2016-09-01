@@ -5,7 +5,7 @@ class DB_access
     public static $db = [
         'user'    => 'root',
         'pass'    => '12341234',
-        'db_name' => 'grk_beta',
+        'db_name' => 'grkvnko',
         'host'    => 'localhost'
     ];
 }

@@ -6,30 +6,6 @@ class ERR
     const FATAL_ERROR = 100;
 }
 
-Registry::$reg['INDEX_DIR_'] = $INDEX_DIR_;
-Registry::$reg['lang'] = 'en';
-
-spl_autoload_register('__autoload');
-
-function __autoload($class_name)
-{
-    $arr_class_files = [
-        "app/controllers/" . $class_name . '.php',
-        "app/models/" . $class_name . '.php',
-        "app/views/" . $class_name . '.php',
-        "app/core/" . $class_name . '.php',
-        "app/lib/" . $class_name . '.php',
-        "app/structure/" . $class_name . '.php'
-    ];
-
-    foreach ($arr_class_files as $item) {
-        if (file_exists($item)) {
-            require_once ($item);
-            break;
-        }
-    }
-}
-
 function normalizePage($page_num)
 {
     $page_num = mb_substr($page_num, 0, 5);
@@ -38,13 +14,11 @@ function normalizePage($page_num)
     return $page_num;
 }
 
-
-
 function varDump($var)
 {
-    echo "<pre>";
+    echo '<pre>';
     print_r($var);
-    echo "</pre>";
+    echo '</pre>';
 }
 
 class ErrGetModelDataException extends Exception
@@ -65,10 +39,11 @@ class NoDataException extends Exception
     public function outMessage()
     {
         if ($this->getCode() == ERR::NO_DATA_FOR_VIEW) {
-            echo "<center>Error load module " . $this->getMessage() . "</center>";
+            echo '<center>Error load module ', $this->getMessage(), '</center>';
         }
     }
 }
+
 
 
 class PostStuff 

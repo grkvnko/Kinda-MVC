@@ -2,24 +2,17 @@
 
 class Router
 {
-    private $routes;
+    private static $routes;
 
     function __construct()
     {
-        $this->routes = [
-            ''          => 'DefaultController/mainPage',
-            '404'       => 'DefaultController/mainPage/error404',
-            'page'      => 'DefaultController/selectPage',
-            'post'      => 'PostController/showPost',
-            'search'    => 'SearchController/action',
-            'about'     => 'AboutController/action'
-        ];
+        self::$routes = include '/app/routes/Routes.php';
     }
 
     private function getArrayFromURI()
     {
         $dummy_server_path = htmlspecialchars($_SERVER['PHP_SELF']);
-        $dummy_server_path = str_replace("index.php", "", $dummy_server_path);
+        $dummy_server_path = str_replace('index.php', '', $dummy_server_path);
 
         $CUT_REQUEST_URI = mb_substr($_SERVER['REQUEST_URI'], 0, 120);
 
@@ -34,10 +27,10 @@ class Router
         $routes_arr = $this->getArrayFromURI();
         $route_way = array_shift($routes_arr);
 
-        if (array_key_exists($route_way, $this->routes)) {
-            $route_control = $this->routes[$route_way];
+        if (array_key_exists($route_way, self::$routes)) {
+            $route_control = self::$routes[$route_way];
         } else {
-            $route_control = $this->routes['404'];
+            $route_control = self::$routes['404'];
         }
 
         $controllerAction = explode('/', $route_control);
