@@ -6,7 +6,6 @@ class ERR
     const FATAL_ERROR = 100;
 }
 
-
 Registry::$reg['INDEX_DIR_'] = $INDEX_DIR_;
 
 spl_autoload_register('__autoload');
