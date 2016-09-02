@@ -24,7 +24,7 @@ class GalleryModel extends Model
             $take_post_pic = mt_rand(1, $pics_count);
             $take_post_date = $post_post_data['date'];
 
-            $selected_post_pic = SITE_CONFIG::site_absolute_url . 'pic/' . $take_post_ID . '/' . $take_post_pic . 's.jpg';
+            $selected_post_pic = Config::getSiteURL() . 'pic/' . $take_post_ID . '/' . $take_post_pic . 's.jpg';
 
             $view_data[] = [ 'date' => $take_post_date, 'pic' => $selected_post_pic ];
         }

@@ -11,7 +11,6 @@ class LangPak
 
     public static function get_word($text)
     {
-        $lang = Registry::$reg['lang'];
-        echo self::$words_arr[$text][$lang];
+        echo self::$words_arr[$text][mainframe::getLanguage()];
     }
 }

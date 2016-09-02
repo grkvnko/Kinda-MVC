@@ -3,7 +3,15 @@
 class DefaultController extends Controller
 {
     public function __construct() {}
+    
+    public function setLanguage($routes_arr, $action_way = null)
+    {
+        $selected_lang = $routes_arr[0];
 
+        $_SESSION['lang'] = $selected_lang;
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+    
     public function mainPage($routes_arr, $action_way = null)
     {
         switch ($action_way) {

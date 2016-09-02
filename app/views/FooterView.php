@@ -2,8 +2,8 @@
 
 class FooterView extends View
 {
-    static $module_name = "Footer";
-    static $templates = [
+    protected $module_name = "Footer";
+    protected $templates = [
         'tpl.footer.php'
     ];
 }

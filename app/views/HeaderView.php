@@ -2,8 +2,8 @@
 
 class HeaderView extends View
 {
-    static $module_name = "Header";
-    static $templates = [
+    protected $module_name = "Header";
+    protected $templates = [
         'tpl.header.php'
     ];
 }

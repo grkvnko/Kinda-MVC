@@ -2,8 +2,8 @@
 
 class AboutView extends View
 {
-    static $module_name = "About";
-    static $templates = [
+    protected $module_name = "About";
+    protected $templates = [
         'tpl.about.php'
     ];
 }

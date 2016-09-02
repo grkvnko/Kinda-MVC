@@ -1,7 +1,6 @@
 <?php
 
-Registry::$reg['INDEX_DIR_'] = $INDEX_DIR_;
-Registry::$reg['lang'] = 'ru';
+session_start();
 
 spl_autoload_register('__autoload');
 

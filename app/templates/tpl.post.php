@@ -16,7 +16,7 @@
     <?php
 
     foreach ($view_data['tags'] as $tag) {
-        echo ' <a href="', SITE_CONFIG::site_absolute_url ,'tags/',$tag,'">#', $tag, '</a>';
+        echo ' <a href="', Config::getSiteURL(),'tags/',$tag,'">#', $tag, '</a>';
     }
 
     ?>

@@ -35,7 +35,7 @@ class NoDataException extends Exception
     {
         parent::__construct($message, $code);
     }
-    
+
     public function outMessage()
     {
         if ($this->getCode() == ERR::NO_DATA_FOR_VIEW) {
@@ -46,7 +46,7 @@ class NoDataException extends Exception
 
 
 
-class PostStuff 
+class PostStuff
 {
     static function parsePost($post_text, $post_id)
     {
@@ -54,7 +54,7 @@ class PostStuff
         $post_text = str_replace('#>', '</div>',  $post_text);
         $post_text = str_replace('<p#', '<p>', $post_text);
         $post_text = str_replace('#p>', '</p>',  $post_text);
-        $post_text = str_replace('#pic_', '<img src="'.SITE_CONFIG::site_absolute_url.'pic/'. $post_id .'/',  $post_text);
+        $post_text = str_replace('#pic_', '<img src="'.Config::getSiteURL().'pic/'. $post_id .'/',  $post_text);
         $post_text = str_replace('_pic#', '.jpg">',  $post_text);
         return $post_text;
     }

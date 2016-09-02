@@ -2,8 +2,8 @@
 
 class Preview_PostsView extends View
 {
-    static $module_name = "Preview_Posts";
-    static $templates = [
+    protected $module_name = "Preview_Posts";
+    protected $templates = [
         'tpl.preview_posts.php'
     ];
 }

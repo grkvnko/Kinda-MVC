@@ -2,7 +2,8 @@
 
 $INDEX_DIR_ = __DIR__;
 
-require_once('app/core/loader.php');
+require_once 'app/core/loader.php';
+require_once 'app/core/mainframe.php';
 
-$router = new Router();
-$router->run();
+mainframe::load();
+mainframe::start();

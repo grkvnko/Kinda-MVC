@@ -2,8 +2,8 @@
 
 class GalleryView extends View
 {
-    static $module_name = "Gallery";
-    static $templates = [
+    protected $module_name = "Gallery";
+    protected $templates = [
         'tpl.gallery.php'
     ];
 }

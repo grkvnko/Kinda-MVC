@@ -2,8 +2,8 @@
 
 class Error404View extends View
 {
-    static $module_name = "Error404";
-    static $templates = [
+    protected $module_name = "Error404";
+    protected $templates = [
         'tpl.404.php'
     ];
 }

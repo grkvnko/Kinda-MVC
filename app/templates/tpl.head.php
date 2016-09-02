@@ -9,10 +9,10 @@
     <link href='https://fonts.googleapis.com/css?family=Lora&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 <?php foreach ($view_data['page_css'] as $css_name): ?>
-    <link rel="stylesheet" href="<?php echo SITE_CONFIG::site_absolute_url, "media/css/", $css_name; ?>" type="text/css" media="all">
+    <link rel="stylesheet" href="<?php echo Config::getSiteURL(), "media/css/", $css_name; ?>" type="text/css" media="all">
 <?php endforeach; ?>
 <?php foreach ($view_data['page_scripts'] as $js_name): ?>
-    <script src="<?php echo SITE_CONFIG::site_absolute_url, "media/js/", $js_name; ?>"></script>
+    <script src="<?php echo Config::getSiteURL(), "media/js/", $js_name; ?>"></script>
 <?php endforeach; ?>
 </head>
 <body>

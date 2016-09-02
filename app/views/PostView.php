@@ -2,8 +2,8 @@
 
 class PostView extends View
 {
-    static $module_name = "Post";
-    static $templates = [
+    protected $module_name = "Post";
+    protected $templates = [
         'tpl.post.php'
     ];
 }

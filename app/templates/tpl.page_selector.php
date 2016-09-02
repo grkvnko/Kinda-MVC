@@ -14,7 +14,7 @@ if ($TPL_PAGE_cur_page == null) {
         if ($TPL_OUT_PAGE == $TPL_PAGE_cur_page)
             echo "<li><em>$TPL_OUT_PAGE</em></li>";
         else
-            echo "<li><a href=\"", SITE_CONFIG::site_absolute_url, "page/$TPL_OUT_LINK\" class=\"a_page\">$TPL_OUT_PAGE</a></li>";
+            echo "<li><a href=\"", Config::getSiteURL(), "page/$TPL_OUT_LINK\" class=\"a_page\">$TPL_OUT_PAGE</a></li>";
     };
 }
 

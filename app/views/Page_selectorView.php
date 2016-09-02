@@ -2,8 +2,8 @@
 
 class Page_selectorView extends View
 {
-    static $module_name = "Page_selector";
-    static $templates = [
+    protected $module_name = "Page_selector";
+    protected $templates = [
         'tpl.page_selector.php'
     ];
 }
