@@ -6,10 +6,12 @@ class DefaultController extends Controller
     
     public function setLanguage($routes_arr, $action_way = null)
     {
-        $selected_lang = $routes_arr[0];
+        if (mainframe::setSelectedLanguage($routes_arr[0]) && isset($_SERVER['HTTP_REFERER'])) {
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            return;
+        }
 
-        $_SESSION['lang'] = $selected_lang;
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header('Location: ' . Config::getSiteURL());
     }
     
     public function mainPage($routes_arr, $action_way = null)

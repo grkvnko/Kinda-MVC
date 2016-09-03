@@ -109,6 +109,23 @@ header #small_menu .header_menu_a {
     visibility: hidden;
 }
 
+.header_menu_lang {
+    color: #f8a538;
+}
+
+.header_menu_lang:after {
+    content: ' • ';
+}
+
+.header_menu_lang:hover {
+    color: #f7cb41;
+}
+
+.header_menu_lang:last-child:after {
+    content: '';
+}
+
+
 
 @media only screen and (min-width: 1201px) {
 

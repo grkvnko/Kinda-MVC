@@ -3,14 +3,21 @@
 class LangPak
 {
     private static $words_arr;
+    private static $languages = ['РУС' => 'ru', 'ENG' => 'en'];
 
-    public static function set_words(array $words_arr)
+    public static function setWords(array $words_arr)
     {
         self::$words_arr = $words_arr;
     }
 
-    public static function get_word($text)
+    public static function getWord($text)
     {
-        echo self::$words_arr[$text][mainframe::getLanguage()];
+        $text_find = self::$words_arr[$text][mainframe::getCurrentLanguage()];
+        echo (isset($text_find)) ? $text_find : self::$words_arr[$text][Config::getDefaultLanguage()];
+    }
+
+    public static function getLanguages()
+    {
+        return self::$languages;
     }
 }

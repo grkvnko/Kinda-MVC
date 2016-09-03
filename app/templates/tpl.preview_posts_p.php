@@ -1,5 +1,5 @@
 <?php
-LangPak::set_words([
+LangPak::setWords([
     'PhotosCount' => ['en' => 'total photos in post', 'ru' => 'всего фоточек']
 ]);
 ?>
@@ -17,6 +17,6 @@ LangPak::set_words([
             <?php foreach ($preview_posts['preview_thumbs'] as $preview_thumbs): ?><a href=""><img src="<?= Config::getSiteURL(), $preview_thumbs ?>">
                 <div class="preview_post_gallery_hover"></div></a><?php endforeach; ?>
         </div>
-        <div class="preview_post_gallery_text"><?php LangPak::get_word('PhotosCount'); echo ' ', $preview_posts['total_photos']; ?></div>
+        <div class="preview_post_gallery_text"><?php LangPak::getWord('PhotosCount'); echo ' ', $preview_posts['total_photos']; ?></div>
     </div>
 </div>

@@ -6,7 +6,7 @@ class obj_post_p extends obj_post
 
     private static function getPostRecords($post_id)
     {
-        $local_language = mainframe::getLanguage();
+        $local_language = mainframe::getCurrentLanguage();
 
         $query = "
         SELECT
@@ -46,7 +46,7 @@ class obj_post_p extends obj_post
 
     private static function getPreviewRecords($post_id)
     {
-        $local_language = mainframe::getLanguage();
+        $local_language = mainframe::getCurrentLanguage();
 
         $query = "
         SELECT

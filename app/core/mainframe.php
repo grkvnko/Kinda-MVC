@@ -3,7 +3,7 @@
 final class mainframe
 {
     private static $instance;
-    private static $site_config;
+    private static $site_config = [];
     private static $router;
 
     public static function load()
@@ -17,28 +17,38 @@ final class mainframe
 
     private function __construct()
     {
-        self::$site_config = [];
-        self::setLanguage();
+        self::$site_config['lang'] = self::getSelectedLanguage();
         self::$router = new Router();
     }
 
-    private function __clone()
+    private function __clone() {}
+
+    private function __wakeup() {}
+
+    private static function getSelectedLanguage()
     {
-    }
-
-    private function __wakeup()
-    {
-    }
-
-    private static function setLanguage(){
-        // list of lang's
-        $lang = 'ru';
-
         if(isset($_SESSION['lang'])) {
-            $lang = $_SESSION['lang'];
+            $selected_lang = mb_substr($_SESSION['lang'], 0, 3);
+            if(in_array($selected_lang, LangPak::getLanguages())) {
+                return $selected_lang; 
+            }
         }
+        return Config::getDefaultLanguage();
+    }
 
-        self::$site_config['lang'] = $lang;
+    public static function setSelectedLanguage($lang)
+    {
+        $lang = mb_substr($lang, 0, 3);
+        if(in_array($lang, LangPak::getLanguages(), true)) {
+            $_SESSION['lang'] = $lang;
+            return true;
+        }
+        return false;
+    }
+
+    public static function getCurrentLanguage()
+    {
+        return self::$site_config['lang'];
     }
 
     public static function start()
@@ -48,10 +58,5 @@ final class mainframe
         } else {
             echo '';
         }
-    }
-
-    public static function getLanguage()
-    {
-        return self::$site_config['lang'];
     }
 }

@@ -1,6 +1,6 @@
 <?php
-LangPak::set_words([
+LangPak::setWords([
     'PageNotFound' => ['en' => 'page not found', 'ru' => 'страница не найдена']
 ]);
 ?>
-<h2 id="err404"><?php LangPak::get_word('PageNotFound'); ?></h2>
+<h2 id="err404"><?php LangPak::getWord('PageNotFound'); ?></h2>
