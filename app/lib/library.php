@@ -29,6 +29,14 @@ class ErrGetModelDataException extends Exception
     }
 }
 
+class ErrDBConnection extends Exception
+{
+    public function __construct($message, $code)
+    {
+        parent::__construct($message, $code);
+    }
+}
+
 class NoDataException extends Exception
 {
     public function __construct($message, $code)

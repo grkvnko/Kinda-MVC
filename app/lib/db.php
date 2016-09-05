@@ -27,5 +27,5 @@ ActiveRecord\Config::initialize(function ($cfg) use ($INDEX_DIR_){
 
     $cfg->set_model_directory($models_path);
     $cfg->set_connections(array(
-        'development' => "mysql://$db_user:$db_pass@$db_host/$db_db_name"));
+            'development' => "mysql://$db_user:$db_pass@$db_host/$db_db_name"));
 });

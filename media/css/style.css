@@ -54,6 +54,12 @@ footer a:hover {
     color: lightslategrey;
 }
 
+#errData {
+	width: 100%;
+	text-align: center;
+	font: 30px 'PT Sans Narrow';
+	color: lightslategrey;
+}
 
 main {
 	width: 100%;

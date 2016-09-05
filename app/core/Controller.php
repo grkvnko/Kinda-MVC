@@ -19,9 +19,13 @@ abstract class Controller
         foreach ($structure::$page_structure['components'] as $component) {
             $current_model_class = $component . 'Model';
             if (class_exists($current_model_class)) {
-                $current_model = new $current_model_class($models_var);
-                $view_data['page_title'] = $view_data['page_title'] . $current_model->getTitle();
-                $view_data[$component] = $current_model->getViewData();
+                try {
+                    $current_model = new $current_model_class($models_var);
+                    $view_data['page_title'] = $view_data['page_title'] . $current_model->getTitle();
+                    $view_data[$component] = $current_model->getViewData();
+                } catch (Exception $e) {
+                    throw new ErrDBConnection("", ERR::FATAL_ERROR);
+                }
             } else {
                 //$view_data[$component]['error'] = 100;
                 //throw new ErrGetModelDataException("", ERR::FATAL_ERROR);
@@ -63,6 +67,8 @@ abstract class Controller
         } catch (ErrGetModelDataException $e) {
             $view_data = $this->getData('error404', ['page_num'=>1]);
             $this->renderView('error404', $view_data);
+        } catch (ErrDBConnection $e) {
+            $this->renderView('error', $this->getData('error'));
         }
     }
 }
