@@ -9,11 +9,7 @@ class GalleryModel extends Model
 
         $view_data = [];
         $reg = [];
-        try {
-            $posts_count = obj_post_p::count();
-        } catch (DatabaseException $e) {
-            die('wef');
-        }
+        $posts_count = obj_post_p::count();
 
         for ($i=0;$i<4;$i++) {
             $take_post_ID = mt_rand(1, $posts_count);
