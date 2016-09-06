@@ -2,13 +2,14 @@
 .container_post {
 	background: #fff;
 	padding: 1px 0 0 0;
-	margin: 20px auto;
-	width: 90%;
+	margin: 10px auto 10px auto;
+	margin-left: calc(5% + 10px);
+	width: calc(90% - 20px);
 }
 
 .container_post h1 {
 	width: 60%;
-	font: 34px "Lora";
+	font: 30px "Lora";
 	margin: 20px 0 10px 0;
 	padding: 0;
 }
@@ -100,4 +101,19 @@
 	margin: 0;
 	padding-top: 7px;
 	padding-left: 10px;
+}
+
+
+
+.youtube {
+    position: relative;
+    width: 50%;
+    height: 500px;
+}
+
+.post_text iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
 }

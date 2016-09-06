@@ -11,6 +11,7 @@ class obj_post_p extends obj_post
         $query = "
         SELECT
             post.post_id,
+            post.view,
             post.date,
             post.pics_array,
             GROUP_CONCAT( /* block lang for tags */
@@ -51,6 +52,7 @@ class obj_post_p extends obj_post
         $query = "
         SELECT
             post.post_id,
+            post.view,
             post.date,
             post.pics_array,
             post.pics_prev_array,
@@ -92,6 +94,7 @@ class obj_post_p extends obj_post
 
         $post_data['preview_text'] = $post_records[0]->preview_text;
         $post_data['post_id']      = $post_records[0]->post_id;
+        $post_data['post_view']    = $post_records[0]->view;
         $post_data['date']         = $post_records[0]->date;
         $post_data['total_photos'] = count(explode(',', $post_records[0]->pics_array));
 
@@ -115,6 +118,7 @@ class obj_post_p extends obj_post
         if (count($post_records) == 0) return null;
 
         $post_data['post_id']      = $post_records[0]->post_id;
+        $post_data['post_view']    = $post_records[0]->view;
         $post_data['date']         = $post_records[0]->date;
         $post_data['title']        = $post_records[0]->title;
         $post_data['post_text']    = $post_records[0]->post_text;

@@ -18,7 +18,7 @@ class structure_post
         'page_css' => [
             'style.css',
             'top_post.css',
-            'header.css',
+            'header.post.css',
             'preview_post.css',
             'justifiedGallery.min.css',
             'post.css'
