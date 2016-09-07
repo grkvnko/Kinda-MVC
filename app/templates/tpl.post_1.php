@@ -15,6 +15,14 @@
     <div id="post_tags">
         <?php
 
+        foreach ($view_data['places'] as $place) {
+            echo ' <a href="', Config::getSiteURL(),'tags/',$place,'">#', $place, '</a>';
+        }
+
+        ?>
+        |
+        <?php
+
         foreach ($view_data['tags'] as $tag) {
             echo ' <a href="', Config::getSiteURL(),'tags/',$tag,'">#', $tag, '</a>';
         }

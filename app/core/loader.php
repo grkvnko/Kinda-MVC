@@ -2,6 +2,8 @@
 
 session_start();
 
+date_default_timezone_set('Europe/Moscow');
+
 spl_autoload_register('__autoload');
 
 function __autoload($class_name)
