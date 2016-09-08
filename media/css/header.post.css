@@ -3,7 +3,7 @@ header {
 	position: fixed;
     width: 100%;
 	z-index: 999;
-    height: 120px;
+    height: 80px;
     background-color: #212121;
     padding: 0;
 
@@ -24,7 +24,7 @@ header #full_menu {
     margin: 0 10px 0 10px;
     list-style: none;
     padding: 0;
-    height: 115px;
+    height: 75px;
     border-bottom: 5px solid #f8a538;
     color: #f8a538;
 }
@@ -36,6 +36,10 @@ header #full_menu li {
     height: 100%;
 }
 
+header #full_menu li:first-child {
+    margin-right: 20px;
+}
+
 header #full_menu li:hover {
     border-bottom: 5px solid khaki;
 }
@@ -43,7 +47,7 @@ header #full_menu li:hover {
 header #full_menu #menu_right {
     float: right;
     margin: 0;
-    padding-top: 50px;
+    padding-top: 25px;
     font: 21px 'PT Sans Narrow', 'Tahoma';
     font-weight: bold;
 }
@@ -53,7 +57,7 @@ header #full_menu #menu_right:hover {
 }
 
 header #full_menu .header_logo_a {
-    font: 110px 'Actor', 'Verdana';
+    font: 79px 'Actor', 'Verdana';
     display: block;
     position: relative;
     top: -8px;
@@ -64,8 +68,8 @@ header #full_menu .header_logo_a {
 
 header #full_menu .header_menu_a {
     display: block;
-    padding: 45px 10px 40px 10px;
-    font: 25px 'PT Sans Narrow', 'Tahoma';
+    font: 21px 'PT Sans Narrow', 'Tahoma';
+    padding: 25px 10px 20px 10px;
     letter-spacing: -0.02em;
     color: #f8a538;
 }
@@ -129,49 +133,29 @@ header #small_menu .header_menu_a {
 
 @media only screen and (min-width: 770px) {
 
-	/*header {*/
-		/*height: 120px;*/
-	/*}*/
-
-/*}*/
- /**/
-/*@media only screen and (min-width: 770px) and (max-width: 1200px) {*/
-
     main {
-        padding-top: 80px;;
+        padding-top: 80px;
     }
-
-	header {
-		height: 80px;
-	}
 
     header div {
         width: 90%;
     }
 
-    header #full_menu .header_logo_a {
-        font-size: 79px;
+}
+
+
+@media only screen and (min-width: 770px) and (max-width: 1200px) {
+
+    main {
+        padding-top: 80px;
     }
 
-    header #full_menu .header_menu_a {
-        padding: 25px 10px 20px 10px;
-        font-size: 21px;
-    }
-
-    header #full_menu {
-        height: 75px;
+    header div {
+        width: 95%;
     }
 
     header #full_menu li {
         margin-right: 10px;
-    }
-
-    header #full_menu li:first-child {
-        margin-right: 20px;
-    }
-
-    header #full_menu #menu_right {
-        padding-top: 25px;
     }
 
 }

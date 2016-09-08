@@ -1,6 +1,6 @@
 <?php
 
-if ($TPL_PAGE_cur_page == null) {
+if (null == $TPL_PAGE_cur_page) {
     $TPL_PAGE_cur_page = $view_data['page_num'];
     $TPL_PAGE_page_count = $view_data['pages_count'];
     $TPL_PAGE_show_pages = 2;
@@ -12,9 +12,9 @@ if ($TPL_PAGE_cur_page == null) {
 
     $TPL_LI_for_page = function($TPL_OUT_LINK, $TPL_OUT_PAGE = '∙∙∙') use ($TPL_PAGE_cur_page) {
         if ($TPL_OUT_PAGE == $TPL_PAGE_cur_page)
-            echo "<li><em>$TPL_OUT_PAGE</em></li>";
+            echo '<li><em>', $TPL_OUT_PAGE, '</em></li>';
         else
-            echo "<li><a href=\"", Config::getSiteURL(), "page/$TPL_OUT_LINK\" class=\"a_page\">$TPL_OUT_PAGE</a></li>";
+            echo '<li><a href="', Config::getSiteURL(), 'page/', $TPL_OUT_LINK, '" class="a_page">', $TPL_OUT_PAGE, '</a></li>';
     };
 }
 
