@@ -12,9 +12,10 @@ class GalleryModel extends Model
         $posts_count = obj_post_p::count();
 
         for ($i=0;$i<4;$i++) {
-            $take_post_ID = mt_rand(1, $posts_count);
-            while (in_array($take_post_ID, $reg)){
+            $take_post_ID = mt_rand(1, $posts_count); $z = 0;
+            while (in_array($take_post_ID, $reg)) {
                 $take_post_ID = mt_rand(1, $posts_count);
+                if ($z++ >30) break;
             }
             $reg[] = $take_post_ID;
 
@@ -24,7 +25,7 @@ class GalleryModel extends Model
             $take_post_pic = mt_rand(1, $pics_count);
             $take_post_date = $post_post_data['date'];
 
-            $selected_post_pic = Config::getSiteURL() . 'pic/' . $take_post_ID . '/' . $take_post_pic . 's.jpg';
+            $selected_post_pic = Config::getSiteURL() . 'pic/' . $take_post_ID . '/' . $take_post_pic . 'b.jpg';
 
             $view_data[] = [ 'date' => $take_post_date, 'pic' => $selected_post_pic ];
         }

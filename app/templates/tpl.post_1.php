@@ -12,7 +12,7 @@
         <?php
 
         foreach ($view_data['places'] as $place) {
-            echo ' <a href="', Config::getSiteURL(),'tags/',$place,'">#', $place, '</a>';
+            echo ' <a href="', Config::getSiteURL(),'search/place/',$place,'">#', $place, '</a>';
         }
 
         ?>
@@ -20,7 +20,7 @@
         <?php
 
         foreach ($view_data['tags'] as $tag) {
-            echo ' <a href="', Config::getSiteURL(),'tags/',$tag,'">#', $tag, '</a>';
+            echo ' <a href="', Config::getSiteURL(),'search/tag/',$tag,'">#', $tag, '</a>';
         }
 
         ?>

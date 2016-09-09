@@ -3,7 +3,7 @@
 class posts_list extends ActiveRecord\Model
 {
     static $table_name = 'posts_list';
-    const preview_post_on_page = 9;
+    const preview_post_on_page = 6;
 
     public static function getPreviewPostsByPage($page_num)
     {

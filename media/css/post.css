@@ -150,9 +150,10 @@
 	}
 
 	.grid p {
-		font: 15px "Lora";
+		font: 16px "Lora";
 		margin: 0 auto 10px auto;
-		width: 97%;
+
+		width: 95%;
 	}
 
 	.container_post h1 {
