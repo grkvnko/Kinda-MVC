@@ -13,6 +13,7 @@ class structure_Error404
         ],
         'page_scripts' => [
             'jquery.min.js',
+            'lib.js',
             'jquery.justifiedGallery.min.js',
             'blocksit.min.js',
             'common.def.js',

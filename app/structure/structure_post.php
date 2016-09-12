@@ -10,6 +10,7 @@ class structure_post
         ],
         'page_scripts' => [
             'jquery.min.js',
+            'lib.js',
             'jquery.justifiedGallery.min.js',
             'blocksit.min.js',
             'post.js',

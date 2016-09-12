@@ -107,7 +107,7 @@ class obj_post_p extends obj_post
         $post_data['preview_text'] = $post_records[0]->preview_text;
         $post_data['post_id']      = $post_records[0]->post_id;
         $post_data['post_view']    = $post_records[0]->view;
-        $post_data['date']         = $post_records[0]->date->format('d-m-Y');
+        $post_data['date']         = $post_records[0]->date->format('Y-m-d');
         $post_data['total_photos'] = count(explode(',', $post_records[0]->pics_array));
 
         $tags = explode(',', $post_records[0]->tagsnamearray);
@@ -131,7 +131,7 @@ class obj_post_p extends obj_post
 
         $post_data['post_id']      = $post_records[0]->post_id;
         $post_data['post_view']    = $post_records[0]->view;
-        $post_data['date']         = $post_records[0]->date->format('d-m-Y');
+        $post_data['date']         = $post_records[0]->date->format('Y-m-d');
         $post_data['title']        = $post_records[0]->title;
         $post_data['post_text']    = $post_records[0]->post_text;
 

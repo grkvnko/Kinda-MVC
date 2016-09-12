@@ -1,6 +1,6 @@
 <div class="container_post">
     <!--<div id="post_close"><a href="" onclick="window.history.back();"></a></div>-->
-    <h1><?php echo $view_data['title'] ?></h1><div id="post_date">• <?php echo $view_data['date'] ?> •</div>
+    <h1><?php echo $view_data['title'] ?></h1><div id="post_date">• <span class="js_date"><?php echo $view_data['date'] ?></span> •</div>
     <div class="post_text">
         <?php
 

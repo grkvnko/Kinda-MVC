@@ -36,7 +36,7 @@ $(window).focus( function() {
 	go_BlocksIT();
 });
 
-$(document).ready( function() {
+$(document).ready(function () {
 	$('.justified-gallery img').css("height", 100);
 	go_BlocksIT();
 	go_justifiedGallery();

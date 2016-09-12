@@ -9,6 +9,7 @@ class structure_search
         ],
         'page_scripts' => [
             'jquery.min.js',
+            'lib.js',
             'jquery.justifiedGallery.min.js',
             'common.def.js'
         ],

@@ -10,6 +10,7 @@ class structure_about
         ],
         'page_scripts' => [
             'jquery.min.js',
+            'lib.js',
             'common.def.js'
         ],
         'page_css' => [

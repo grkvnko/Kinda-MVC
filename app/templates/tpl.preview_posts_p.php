@@ -6,7 +6,7 @@ LangPak::setWords([
 
 <div class="prev_post">
     <div class="preview_post_title">
-        <div class="preview_post_date"> <?= $preview_posts['date'] ?> </div>
+        <div class="preview_post_date js_date"> <?= $preview_posts['date'] ?> </div>
         <a href="<?php echo Config::getSiteURL(), 'post/', $preview_posts['post_type'], '/', $preview_posts['post_id']; ?>"
            class="preview_post_link"><span> <?= $preview_posts['preview_text'] ?> </span></a>
         <br>

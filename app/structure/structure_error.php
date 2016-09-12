@@ -10,6 +10,7 @@ class structure_error
         ],
         'page_scripts' => [
             'jquery.min.js',
+            'lib.js',
             'common.def.js',
             'common.js'
         ],
