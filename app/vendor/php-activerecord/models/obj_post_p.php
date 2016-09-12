@@ -117,7 +117,7 @@ class obj_post_p extends obj_post
 
         $pics = explode(',', $post_records[0]->pics_prev_array);
         foreach ($pics as $key) {
-            $post_data['preview_thumbs'][] = 'pic/' . $post_data['post_id'] . '/' . $key . 's.jpg';
+            $post_data['preview_pic'][] = $key;
         }
 
         return $post_data;

@@ -20,14 +20,15 @@ class GalleryModel extends Model
             $reg[] = $take_post_ID;
 
             $post_post_data = obj_post_p::getPreviewData($take_post_ID);
-            $pics_count = sizeof($post_post_data['preview_thumbs']);
+            $pics_count = sizeof($post_post_data['preview_pic']);
 
             $take_post_pic = mt_rand(1, $pics_count);
             $take_post_date = $post_post_data['date'];
 
             $selected_post_pic = Config::getSiteURL() . 'pic/' . $take_post_ID . '/' . $take_post_pic . 'b.jpg';
+            $selected_link_pic = Config::getSiteURL() . 'pic/' . $take_post_ID . '/' . $take_post_pic . '.jpg';
 
-            $view_data[] = [ 'date' => $take_post_date, 'pic' => $selected_post_pic ];
+            $view_data[] = [ 'date' => $take_post_date, 'pic' => $selected_post_pic, 'link' => $selected_link_pic];
         }
 
         return $view_data;

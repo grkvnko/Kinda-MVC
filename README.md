@@ -1,1 +1,3 @@
-Personal photoblog CMS
+#Personal photoblog
+
+grkvnko.me

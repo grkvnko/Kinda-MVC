@@ -14,8 +14,12 @@ LangPak::setWords([
     </div>
     <div class="preview_post_gallery">
         <div class="justified-gallery">
-            <? foreach ($preview_posts['preview_thumbs'] as $preview_thumbs): ?><a href=""><img src="<?= Config::getSiteURL(), $preview_thumbs ?>">
-                <div class="preview_post_gallery_hover"></div></a><? endforeach; ?>
+            <? foreach ($preview_posts['preview_pic'] as $preview_thumbs): ?>
+                <a href="<? echo Config::getSiteURL(), 'pic/', $preview_posts['post_id'], '/', $preview_thumbs, '.jpg'?>">
+                    <img src="<? echo Config::getSiteURL(), 'pic/', $preview_posts['post_id'], '/', $preview_thumbs, 's.jpg'?>">
+                    <div class="preview_post_gallery_hover"></div>
+                </a>
+            <? endforeach; ?>
         </div>
         <div class="preview_post_gallery_text"><?= LangPak::getWord('PhotosCount') ?> <?= $preview_posts['total_photos'] ?></div>
     </div>
