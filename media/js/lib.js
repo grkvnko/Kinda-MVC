@@ -28,6 +28,7 @@ $(document).ready(function () {
     $(document).click(function() {
         $('#popup_img').remove();
         $("body").css("overflow","auto");
+        go_BlocksIT();
     });
 
 });
