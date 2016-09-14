@@ -15,9 +15,13 @@ class Router
         $dummy_server_path = str_replace('index.php', '', $dummy_server_path);
 
         $CUT_REQUEST_URI = mb_substr($_SERVER['REQUEST_URI'], 0, 120);
-
         $m_request_uri = htmlentities($CUT_REQUEST_URI, ENT_QUOTES | ENT_HTML401);
-        $m_request_uri = str_replace($dummy_server_path, "", $m_request_uri);
+
+        if ($dummy_server_path !== '/') {
+            $m_request_uri = str_replace($dummy_server_path, "", $m_request_uri);
+        } else {
+            $m_request_uri = mb_substr($m_request_uri, 1);
+        }
 
         return explode('/', $m_request_uri, 5);
     }

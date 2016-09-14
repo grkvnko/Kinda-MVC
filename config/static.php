@@ -2,7 +2,7 @@
 
 class Config
 {
-    private static $site_url = '/grkvnko.me/';
+    private static $site_url = '/';
 
     public static $db = [
         'user'    => 'root',
