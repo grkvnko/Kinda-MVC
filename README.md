@@ -4,7 +4,7 @@
 
     <VirtualHost 127.0.0.1:84>
         ServerName grkvnko.me:84
-        DocumentRoot "C:/AppServ/www/grkvnko.me"
+        DocumentRoot "путь к папке с сайтом"
     </VirtualHost>
 
 ##conf for nginx
