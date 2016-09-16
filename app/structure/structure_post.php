@@ -6,6 +6,7 @@ class structure_post
         'components' => [
             'Header',
             'Post',
+            'Recommendation',
             'Footer'
         ],
         'page_scripts' => [

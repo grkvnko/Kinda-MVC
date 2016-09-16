@@ -8,6 +8,12 @@ Date.prototype.getMonthName = function () {
     return month[$('html').attr('lang')][this.getMonth()];
 }
 
+function closeImg() {
+    $('#popup_img').remove();
+    $("body").css("overflow","auto");
+    go_BlocksIT();
+}
+
 $(document).ready(function () {
     if (dateNotReady) {
         $('.js_date').each(function (i, elem) {
@@ -26,10 +32,10 @@ $(document).ready(function () {
     });
 
     $(document).click(function() {
-        $('#popup_img').remove();
-        $("body").css("overflow","auto");
-        go_BlocksIT();
+        closeImg();
     });
 
+    $(document).keydown(function(e) {
+        if (e.keyCode == 27) closeImg();
+    });
 });
-
