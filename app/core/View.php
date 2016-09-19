@@ -1,11 +1,6 @@
 <?php
 
-interface ViewInterface
-{
-
-}
-
-abstract class View implements ViewInterface
+abstract class View
 {
     protected $templates = [];
     protected $module_name;

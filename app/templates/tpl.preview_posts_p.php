@@ -1,5 +1,5 @@
 <?php
-LangPak::setWords([
+Translate::setWords([
     'PhotosCount' => ['en' => 'total photos in post', 'ru' => 'всего фоточек']
 ]);
 ?>
@@ -21,6 +21,6 @@ LangPak::setWords([
                 </a>
             <? endforeach; ?>
         </div>
-        <div class="preview_post_gallery_text"><?= LangPak::getWord('PhotosCount') ?> <?= $preview_posts['total_photos'] ?></div>
+        <div class="preview_post_gallery_text"><?= Translate::getWord('PhotosCount') ?> <?= $preview_posts['total_photos'] ?></div>
     </div>
 </div>

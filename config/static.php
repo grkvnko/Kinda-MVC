@@ -18,6 +18,6 @@ class Config
 
     public static function getDefaultLanguage()
     {
-        return reset(LangPak::getLanguages());
+        return reset(Language::getLanguages());
     }
 }
