@@ -48,16 +48,15 @@ class obj_post_p extends obj_post
             LEFT JOIN `spr_places` AS place_local_lang
                 ON places.place_id = place_local_lang.place_id
                 and place_local_lang.lang = '{$local_language}'
-        WHERE
-          post.post_id = {$post_id}
-        GROUP BY 
-          post.post_id, post.date
-		";
+            WHERE 
+                post.post_id = {$post_id} 
+            GROUP BY 
+                post.post_id, post.date";
 
         return self::find_by_sql($query);
     }
 
-    private static function getPreviewRecords($post_id)
+    private static function getPreviewRecords($post_id = null, $rand = null)
     {
         $local_language = mainframe::getCurrentLanguage();
 
@@ -88,19 +87,20 @@ class obj_post_p extends obj_post
                 and post_text_defaul_lang.lang = 'ru'
             LEFT JOIN `obj_post_p_text` AS post_text_local_lang
                 ON post.post_id = post_text_local_lang.post_id
-                and post_text_local_lang.lang = '{$local_language}'
-        WHERE
-          post.post_id = {$post_id}
-        GROUP BY 
-          post.post_id, post.date
-		";
+                and post_text_local_lang.lang = '{$local_language}' ";
+
+        if($post_id === null) {
+            $query .= 'GROUP BY post.post_id, post.date LIMIT ' . $rand . ', 1';
+        } else {
+            $query .= "WHERE post.post_id = {$post_id} GROUP BY post.post_id, post.date";
+        }
 
         return self::find_by_sql($query);
     }
 
-    public static function getPreviewData($post_id)
+    public static function getPreviewData($post_id = null, $rand = null)
     {
-        $post_records = self::getPreviewRecords($post_id);
+        $post_records = self::getPreviewRecords($post_id, $rand);
 
         if (count($post_records) == 0) return null;
 
