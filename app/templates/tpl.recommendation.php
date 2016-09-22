@@ -1,11 +1,15 @@
+<?php
+Translate::setWords([
+    'RELATED CONTENT' => ['en' => 'RELATED CONTENT', 'ru' => 'ЧИТАЙТЕ ТАКЖЕ']
+]);
+?>
 <article id="recommend">
+    <h2 class="h2_caption"><?= Translate::getWord('RELATED CONTENT') ?></h2>
 <?
-foreach ($view_data as $elem) {
-    echo '<a href="', Config::getSiteURL(), 'post/', $elem['post_type'], '/', $elem['post_id'], '" class="reco">
-    <div class="img_reco" style="background: url(', "'/pic/", $elem['post_id'], "/", $elem['preview_pic'][0], "b.jpg')", ' no-repeat 40% 50%;-o-background-size: cover;background-size: cover;">
-        <div class="top_gallery_text js_date">12.12.12</div>
-    </div>
-    <span>', $elem['preview_text'],'</span></a>';
+foreach ($view_data as $post) {
+    echo '<a href="', Config::getSiteURL(), 'post/', $post['post_type'], '/', $post['post_id'], '" class="reco">
+    <div class="img_reco" style="background: url(', "'/pic/", $post['post_id'], "/", $post['preview_pic'][0], "b.jpg')", ' no-repeat 40% 50%;-o-background-size: cover;background-size: cover;">
+        <div class="top_gallery_text js_date">', $post['date'],'</div></div><span>', $post['preview_text'],'</span></a>';
 }
 ?>
 </article>

@@ -3,6 +3,13 @@
 	padding: 10px 0 30px 0;
 }
 
+.h2_caption {
+	padding: 0 0 15px 0;
+	margin: 0;
+	font: bold 19px 'PT Sans Narrow';
+	color: lightslategray;
+}
+
 .reco {
 	background-color: #fff;
 	width: calc(25% - 11px);
@@ -11,9 +18,9 @@
 	margin-right: 11px;
 	padding: 0;
 	vertical-align: top;
-	text-align: justify;
-	font: 15px 'Lora';
-	color: #17252D;
+	text-align: center;
+	font: bold 17px 'Arial';
+	color: 	#36495b;
 }
 
 .reco:last-child {
@@ -29,6 +36,7 @@
 .reco span {
 	display: block;
 	padding: 10px;
+	font: bold 19px 'PT Sans Narrow';
 }
 
 .img_reco {
@@ -36,7 +44,7 @@
 	position: relative;
 	background: url('/pic/1/3b.jpg') no-repeat 40% 50%;	-o-background-size: cover;	background-size: cover;
 	width: 100%;
-	height: 100px;
+	height: 140px;
 	border-bottom: 4px solid #f8a538;
 }
 
