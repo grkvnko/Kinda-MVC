@@ -8,25 +8,25 @@
 
         ?>
     </div>
-    <div id="post_tags">
+    <div id="post_tags" style="text-align: center">
         <?php
-
         foreach ($view_data['places'] as $place) {
             echo ' <a href="', Config::getSiteURL(),'search/place/',$place,'">#', $place, '</a>';
         }
-
         ?>
-        |
+        <? if (count($view_data['places']) > 0): ?>
+        <em style="font: 17px 'Tahoma'; margin: 0 2px 0 2px; color: slategray">~</em>
+        <? endif; ?>
         <?php
-
         foreach ($view_data['tags'] as $tag) {
             echo ' <a href="', Config::getSiteURL(),'search/tag/',$tag,'">#', $tag, '</a>';
         }
-
         ?>
     </div>
+    <div id="post_tags" style="text-align: center">
+        VK | FB | OK | G+
+    </div>
 </div>
-
 
 <script language="JavaScript">
 

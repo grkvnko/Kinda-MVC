@@ -51,7 +51,7 @@ class obj_post_p extends obj_post
             WHERE 
                 post.post_id = {$post_id} 
             GROUP BY 
-                post.post_id, post.date";
+                post.post_id, post.date ";
 
         return self::find_by_sql($query);
     }
@@ -136,13 +136,17 @@ class obj_post_p extends obj_post
         $post_data['post_text']    = $post_records[0]->post_text;
 
         $tags = explode(',', $post_records[0]->tagsnamearray);
-        foreach ($tags as $key) {
-            $post_data['tags'][] = $key;
+        if ($tags !== ['']) {
+            foreach ($tags as $key) {
+                $post_data['tags'][] = $key;
+            }
         }
 
         $places = explode(',', $post_records[0]->placesnamearray);
-        foreach ($places as $key) {
-            $post_data['places'][] = $key;
+        if ($places !== ['']) {
+            foreach ($places as $key) {
+                $post_data['places'][] = $key;
+            }
         }
 
         return $post_data;

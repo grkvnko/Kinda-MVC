@@ -36,6 +36,7 @@
 .reco span {
 	display: block;
 	padding: 10px;
+	padding-bottom: 15px;
 	font: bold 19px 'PT Sans Narrow';
 }
 
