@@ -2,7 +2,7 @@
 
 class Config
 {
-    private static $site_url = '/';
+    private static $site_path = '/';
 
     public static $db = [
         'user'    => 'root',
@@ -13,7 +13,15 @@ class Config
 
     public static function getSiteURL()
     {
-        return self::$site_url;
+        return self::$site_path;
+    }
+    
+    public static function getRealURL()
+    {
+        $CUT_REQUEST_URI = mb_substr($_SERVER['REQUEST_URI'], 0, 120);
+        $m_request_uri = htmlentities($CUT_REQUEST_URI, ENT_QUOTES | ENT_HTML401);
+
+        return $_SERVER["HTTP_HOST"] . $m_request_uri;
     }
 
     public static function getDefaultLanguage()

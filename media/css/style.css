@@ -19,8 +19,8 @@
 	padding: 0;
 	vertical-align: top;
 	text-align: center;
-	font: bold 17px 'Arial';
-	color: 	#36495b;
+	color: #26323d;
+	border-bottom: 2px solid #d7d7d7;
 }
 
 .reco:last-child {
@@ -37,7 +37,8 @@
 	display: block;
 	padding: 10px;
 	padding-bottom: 15px;
-	font: bold 19px 'PT Sans Narrow';
+	font: bold 18px 'PT Sans Narrow';
+	line-height: 22px;
 }
 
 .img_reco {

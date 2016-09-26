@@ -8,7 +8,7 @@
 
         ?>
     </div>
-    <div id="post_tags" style="text-align: center">
+    <div class="after_post">
         <?php
         foreach ($view_data['places'] as $place) {
             echo ' <a href="', Config::getSiteURL(),'search/place/',$place,'">#', $place, '</a>';
@@ -23,9 +23,7 @@
         }
         ?>
     </div>
-    <div id="post_tags" style="text-align: center">
-        VK | FB | OK | G+
-    </div>
+    <div class="after_post share"></div>
 </div>
 
 <script language="JavaScript">
