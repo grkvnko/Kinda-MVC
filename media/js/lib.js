@@ -1,25 +1,19 @@
 var dateNotReady = true;
 
-var shareLinks = [
-    {'img':'fb', 'url':'https://vk.com/share.php?url='},
-    {'img':'vk', 'url':'https://vk.com/share.php?url='},
-    {'img':'tw', 'url':'https://twitter.com/intent/tweet?url='},
-    {'img':'ok', 'url':'https://twitter.com/intent/tweet?url='}
-];
-var shareLinksColor = {
-    'fb': ['#475995', 'white'],
-    'vk': ['#5d7294', 'white'],
-    'tw': ['#76aaeb', 'white'],
-    'ok': ['#ed7c20', 'white']
+var shareLinks = {
+    'fb': {'url':'https://vk.com/share.php?url=', 'color': ['#475995', 'white']},
+    'vk': {'url':'https://vk.com/share.php?url=', 'color': ['#5d7294', 'white']},
+    'tw': {'url':'https://twitter.com/intent/tweet?url=', 'color': ['#76aaeb', 'white']},
+    'ok': {'url':'https://twitter.com/intent/tweet?url=', 'color': ['#ed7c20', 'white']}
 };
 
 Date.prototype.getMonthName = function () {
     var month = {
         'ru': ['ЯНВАРЯ', 'ФЕВРАЛЯ', 'МАРТА', 'АПРЕЛЯ', 'МАЯ', 'ИЮНЯ', 'ИЮЛЯ', 'АВГУСТА', 'СЕНТЯБРЯ', 'ОКТЯБРЯ', 'НОЯБРЯ', 'ДЕКАБРЯ'],
         'en': ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOW', 'DEC']
-    }
+    };
     return month[$('html').attr('lang')][this.getMonth()];
-}
+};
 
 function closeImg() {
     $('#popup_img').remove();
@@ -51,21 +45,19 @@ $(document).ready(function () {
     $(document).keydown(function(e) {
         if (e.keyCode == 27) closeImg();
     });
-    
-    shareLinks.forEach(function (item) {
-        $(".share").append('<a href="'+item['url']+location.href+'" class="shareLink"><img src="/media/img/'+item['img']+'_i.svg" alt="'+item['img']+'"></a>');
-    });
+
+    for (key in shareLinks) {
+        $(".share").append('<a href="'+shareLinks[key]['url']+location.href+'" class="shareLink"><img src="/media/img/'+key+'_i.svg" alt="'+key+'" height="19px"></a>');
+    }
 
     $(".shareLink").mouseover(function () {
-        shareNameID = $(this).find("img").attr("alt");
-        shareName = "/media/img/" + shareNameID + ".svg";
-        $(this).find("img").attr("src", shareName);
-        $(this).css("background-color", shareLinksColor[shareNameID][0]);
+        shareNameKEY = $(this).find("img").attr("alt");
+        $(this).find("img").attr("src", "/media/img/" + shareNameKEY + ".svg");
+        $(this).css("background-color", shareLinks[shareNameKEY]['color'][0]);
     }).mouseout(function () {
-        shareName = $(this).find("img").attr("alt");
-        shareName = "/media/img/" + shareName + "_i.svg";
-        $(this).find("img").attr("src", shareName);
-        $(this).css("background-color", shareLinksColor[shareNameID][1]);
+        shareNameKEY = $(this).find("img").attr("alt");
+        $(this).find("img").attr("src", "/media/img/" + shareNameKEY + "_i.svg");
+        $(this).css("background-color", shareLinks[shareNameKEY]['color'][1]);
     }).click( function () {
         newwindow = window.open(this.href, '', 'height=500,width=650,left=200,top=200');
         if (window.focus) {newwindow.focus()}

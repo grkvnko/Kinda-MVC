@@ -5,5 +5,5 @@ RewriteEngine On
 
 RewriteBase /
 
-RewriteCond %{REQUEST_URI} !(^(.*\.png|.*\.jpg|.*\.css|.*\.js|.*\.ico)$) [NC]
+RewriteCond %{REQUEST_URI} !(^(.*\.png|.*\.jpg|.*\.css|.*\.js|.*\.ico|.*\.svg)$) [NC]
 RewriteRule . index.php [NC,L]
