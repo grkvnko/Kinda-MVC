@@ -1,6 +1,6 @@
 <?php
 
-if (null == $TPL_PAGE_cur_page) {
+if (!isset($TPL_PAGE_cur_page)) {
     $TPL_PAGE_cur_page = $view_data['page_num'];
     $TPL_PAGE_page_count = $view_data['pages_count'];
     $TPL_PAGE_show_pages = 2;
