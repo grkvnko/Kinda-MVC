@@ -40,6 +40,9 @@ class Router
         $controllerAction = explode('/', $route_control);
         $ch_controller = array_shift($controllerAction);
         $ch_controller = new $ch_controller;
-        $ch_controller->$controllerAction[0]($routes_arr, $controllerAction[1]);
+        $ch_controller->$controllerAction[0](
+            $routes_arr,
+            (count($controllerAction) > 1) ? $controllerAction[1] : null
+        );
     }
 }
