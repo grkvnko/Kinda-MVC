@@ -8,6 +8,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cormorant+SC&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
 <? foreach ($view_data['page_css'] as $css_name): ?>
     <link rel="stylesheet" href="<?= Config::getSiteURL() ?>media/css/<?= $css_name ?>" type="text/css" media="all">
 <? endforeach; ?>

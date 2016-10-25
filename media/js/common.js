@@ -20,6 +20,13 @@ function go_justifiedGallery() {
 		margins: 5,
 		lastRow: 'justify'
 	});
+
+	$('#top_photostream').justifiedGallery({
+		maxRowHeight : 100,
+		rowHeight: 100,
+		margins: 0,
+		lastRow: 'justify'
+	});
 }
 
 function setTimers() {

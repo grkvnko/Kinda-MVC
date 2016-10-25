@@ -5,6 +5,7 @@ class structure_default
     public static $page_structure = [
         'components' => [
             'Header',
+            //'TopPhotostream',
             'Gallery',
             'Preview_Posts',
             'Page_selector',
@@ -23,6 +24,7 @@ class structure_default
             'top_post.css',
             'header.css',
             'preview_post.css',
+            'photostream.css',
             'justifiedGallery.min.css'
         ]
     ];

@@ -2,16 +2,19 @@
 
 class SearchController extends Controller
 {
-    public function action($routes_arr)
+    public function action($routes_arr, $action_way = null)
     {
-        $find_subject = strip_tags(rawurldecode($routes_arr[1]));
+        if(count($routes_arr)>0) {
 
-        if ($routes_arr[0] === 'tag') {
+            $find_subject = strip_tags(rawurldecode($routes_arr[1]));
 
-        } elseif ($routes_arr[0] === 'place') {
+            if ($routes_arr[0] === 'tag') {
 
-        } else {
+            } elseif ($routes_arr[0] === 'place') {
 
+            } else {
+
+            }
         }
 
         $this->outView('search');
