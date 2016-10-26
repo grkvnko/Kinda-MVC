@@ -13,7 +13,6 @@ class obj_post_p extends obj_post
             post.post_id,
             post.view,
             post.date,
-            post.pics_array,
             GROUP_CONCAT( /* block lang for tags */
                 DISTINCT IFNULL(tag_local_lang.tag, tag_default_lang.tag)
                 ORDER BY tags.tag_id
@@ -65,7 +64,6 @@ class obj_post_p extends obj_post
             post.post_id,
             post.view,
             post.date,
-            post.pics_array,
             post.pics_prev_array,
             GROUP_CONCAT(
                 DISTINCT IFNULL(tag_local_lang.tag, tag_default_lang.tag) 
@@ -108,7 +106,7 @@ class obj_post_p extends obj_post
         $post_data['post_id']      = $post_records[0]->post_id;
         $post_data['post_view']    = $post_records[0]->view;
         $post_data['date']         = $post_records[0]->date->format('Y-m-d');
-        $post_data['total_photos'] = count(explode(',', $post_records[0]->pics_array));
+        $post_data['total_photos'] = 0;
 
         $tags = explode(',', $post_records[0]->tagsnamearray);
         foreach ($tags as $key) {
@@ -116,8 +114,11 @@ class obj_post_p extends obj_post
         }
 
         $pics = explode(',', $post_records[0]->pics_prev_array);
-        foreach ($pics as $key) {
-            $post_data['preview_pic'][] = $key;
+        foreach ($pics as $pic_id) {
+            $current_pic = photostrm_pics::all(array('conditions' => array('pic_id = ?', $pic_id)));
+            if (count($current_pic) != 0) {
+                $post_data['preview_pic'][] = $current_pic[0]->part . "/" . $current_pic[0]->pic_id;
+            }
         }
 
         return $post_data;
@@ -136,6 +137,13 @@ class obj_post_p extends obj_post
         $post_data['post_text']    = $post_records[0]->post_text;
         $post_data['places']       = [];
         $post_data['tags']         = [];
+        $post_data['post_pics']    = [];
+        
+        $pics = obj_post_p_pics::all(array('conditions' => array('post_id = ?', $post_data['post_id']), 'order' => 'sort asc'));
+        foreach ($pics as $pic) {
+            $pic_source = photostrm_pics::all(array('conditions' => array('pic_id = ?', $pic->pic_id)));
+            $post_data['post_pics'][] = $pic_source[0]->part . "/" . $pic->pic_id;
+        }
 
         $tags = explode(',', $post_records[0]->tagsnamearray);
         if ($tags !== ['']) {

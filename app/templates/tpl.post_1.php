@@ -4,7 +4,7 @@
     <div class="post_text">
         <?php
 
-        echo PostStuff::parsePost($view_data['post_text'], $view_data['post_id']);
+        echo PostStuff::parsePost($view_data['post_text'], $view_data['post_pics']);
 
         ?>
     </div>
