@@ -1,11 +1,12 @@
 <?php
 
-class structure_default
+class structure_page
 {
     public static $page_structure = [
         'components' => [
             'Header',
-            'Gallery',
+            'Separator',
+            'Page_selector',
             'Preview_Posts',
             'Page_selector',
             'Footer'

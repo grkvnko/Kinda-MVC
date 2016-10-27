@@ -20,10 +20,6 @@ class PostStuff
 {
     static function parsePost($post_text, $post_pics)
     {
-        //$_post_img_1 = '<a href="' . Config::getSiteURL() . 'pic/' . $post_id . '/';
-        //$_post_img_2 = '.jpg" class="img_link"><img src="' . Config::getSiteURL() . 'pic/' . $post_id . '/';
-        //$_post_img_3 = 'b.jpg"></a>';
-
         $post_text = str_replace('<#', '<div class="grid">', $post_text);
         $post_text = str_replace('<p#', '<p>', $post_text);
         $post_text = str_replace('#p>', '</p>',  $post_text);
@@ -34,10 +30,6 @@ class PostStuff
                             '<img src="' . Config::getSiteURL() . 'pic/' . $pic . 'b.jpg"></a>';
             $post_text = preg_replace('#<pic>#', $_post_img, $post_text, 1);
         }
-
-        //$post_text = str_replace('#pic#', $_post_img_2, $post_text);
-        //$post_text = str_replace('_pic#', $_post_img_3, $post_text);
-
 
         return $post_text;
     }
