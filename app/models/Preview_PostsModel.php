@@ -5,6 +5,7 @@ class Preview_PostsModel extends Model
     protected function getData($vars = [])
     {
         $page_num = (isset($vars['page_num'])) ? $vars['page_num'] : 1;
+        $vars['show_title'] = (isset($vars['show_title']) ? $vars['show_title'] : true);
 
         $post_data = [];
         $pages_count = posts_list::getPreviewPagesCount();
@@ -18,7 +19,8 @@ class Preview_PostsModel extends Model
 
         $view_data = [
             'page_num' => $page_num,
-            'post_data' => $post_data
+            'post_data' => $post_data,
+            'show_title' => $vars['show_title'],
         ];
 
         $this->setTitle(" (страница {$page_num})");

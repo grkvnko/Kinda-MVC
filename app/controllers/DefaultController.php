@@ -28,6 +28,6 @@ class DefaultController extends Controller
     public function selectPage($routes_arr, $action_way = null)
     {
         $this->outView( ($routes_arr[0] == 1) ? 'default' : 'page',
-                        ['page_num' => normalizePage($routes_arr[0])] );
+                        [ 'page_num' => normalizePage($routes_arr[0]), 'show_title' => ($routes_arr[0] == 1) ? true : false ] );
     }
 }
