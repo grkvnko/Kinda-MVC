@@ -8,5 +8,6 @@ return [
     'post'        => 'PostController/showPost',
     'search'      => 'SearchController/action',
     'photostream' => 'PhotostreamController/action',
-    'about'       => 'AboutController/action'
+    'about'       => 'AboutController/action',
+    'admin'       => 'AdminController/start'
 ];

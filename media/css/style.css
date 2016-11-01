@@ -150,7 +150,7 @@ article {
 #popup_img_src {
 	background-size:contain;
 	background-repeat:   no-repeat;
-	background-position: center center;              /* optional, center the image */
+	background-position: center center;
 
 	width: calc(100% - 40px);
 	height: calc(100% - 40px);
@@ -158,6 +158,15 @@ article {
 	margin: 20px;
 	padding: 0;
 }
+
+
+
+#form_login {
+	margin: 30px auto 0 auto;
+	text-align: center;
+	font: 15px "tahoma";
+}
+
 
 
 
