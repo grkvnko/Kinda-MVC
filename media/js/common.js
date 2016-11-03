@@ -21,11 +21,11 @@ function go_justifiedGallery() {
 		lastRow: 'justify'
 	});
 
-	$('#top_photostream').justifiedGallery({
-		maxRowHeight : 100,
-		rowHeight: 100,
-		margins: 0,
-		lastRow: 'justify'
+	$('#photostream').justifiedGallery({
+		maxRowHeight : 200,
+		rowHeight: 200,
+		margins: 5,
+		lastRow: 'nojustify'
 	});
 }
 

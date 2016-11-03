@@ -5,6 +5,8 @@ class structure_photostream
     public static $page_structure = [
         'components' => [
             'Header',
+            'Photostream',
+            'Page_selector',
             'Footer'
         ],
         'page_scripts' => [
