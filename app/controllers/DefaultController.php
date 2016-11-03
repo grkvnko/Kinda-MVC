@@ -2,9 +2,7 @@
 
 class DefaultController extends Controller
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function setLanguage($routes_arr, $action_way = null)
     {
@@ -20,7 +18,9 @@ class DefaultController extends Controller
     {
         switch ($action_way) {
             case 'error404':
-                $this->outView('Error404', ['page_num' => 1, 'page_way' => 'page', 'page_source' => 'posts_list']);
+                $this->outView('Error404', ['page_num' => 1,
+                                            'page_way' => 'page',
+                                            'page_source' => 'posts_list']);
                 break;
             default:
                 $this->selectPage([1]);

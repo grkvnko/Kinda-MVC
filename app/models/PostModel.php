@@ -13,6 +13,7 @@ class PostModel extends Model
         if ($view_data == null) throw new ErrGetModelDataException("", ERR::NO_DATA_FOR_VIEW);
 
         $this->setTitle(": " . $view_data['title']);
+        $this->og = [ 'description' => $view_data['preview_text'], 'image' => 'pic/'.$view_data['post_pics'][0].'b.jpg' ];
 
         return $view_data;
     }

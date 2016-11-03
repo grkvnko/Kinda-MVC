@@ -5,6 +5,7 @@ abstract class Model
     protected $data = [];
     protected $page_title = "";
     protected $view;
+    public $og = [];
     static $module_name;
 
     public function __construct(Array $vars = [])

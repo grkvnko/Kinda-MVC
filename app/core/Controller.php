@@ -15,6 +15,7 @@ abstract class Controller
         // invalidnost
         $current_model = new BodyModel();
         $view_data['page_title'] = $current_model->getTitle();
+        $view_data['og'] = $models_var['og'];
 
         foreach ($structure::$page_structure['components'] as $component) {
             $current_model_class = $component . 'Model';
@@ -22,6 +23,7 @@ abstract class Controller
                 $current_model = new $current_model_class($models_var);
                 $view_data['page_title'] = $view_data['page_title'] . $current_model->getTitle();
                 $view_data[$component] = $current_model->getViewData();
+                if ($current_model->og<>[]) $view_data['og'] = $current_model->og;
             } else {
                 //$view_data[$component]['error'] = 100;
                 //throw new ErrGetModelDataException("", ERR::FATAL_ERROR);
@@ -38,6 +40,7 @@ abstract class Controller
         $structure = 'structure_' . $structure_name;
 
         $temp['page_title'] = $view_data['page_title'];
+        $temp['og']         = $view_data['og'];
         $view_data_body = $structure::$page_structure + $temp;
 
         BodyView::render('header', $view_data_body);

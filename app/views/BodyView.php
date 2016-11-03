@@ -14,6 +14,11 @@ class BodyView
 
     static public function render($elem, $view_data = [])
     {
+        if (!isset($view_data['og'])) {
+            $view_data['og'] = ['description' => 'Персональный фотоблог',
+                                'image' => 'media/img/grkvnko.jpg'];
+        }
+
         foreach (self::$templates[$elem] as $item) {
             include "app/templates/$item";
         }

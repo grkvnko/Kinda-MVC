@@ -17,5 +17,10 @@
     <script src="<?= Config::getSiteURL() ?>media/js/<?= $js_name ?>"></script>
 <? endforeach; ?>
     <link rel="shortcut icon" type="image/x-icon" href="<?= Config::getSiteURL() ?>media/img/fav.ico">
+
+    <meta property="og:title" content="<?= $view_data['page_title'] ?>" />
+    <meta property="og:description" content="<?= $view_data['og']['description'] ?>" />
+    <meta property="og:image" content="<?= Config::getSiteURL() ?><?= $view_data['og']['image'] ?>" />
+    <meta property="og:site_name" content="GRKVNKO" />
 </head>
 <body>
