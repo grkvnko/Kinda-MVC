@@ -77,6 +77,10 @@
 	color: lightslategray;
 }
 
+.img_link {
+	cursor: zoom-in;
+}
+
 .after_post a:hover {
 	color: #965621;
 }

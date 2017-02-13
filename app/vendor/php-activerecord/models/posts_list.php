@@ -10,15 +10,12 @@ class posts_list extends ActiveRecord\Model
         $preview_post_on_page = self::preview_post_on_page;
         $start = ($preview_post_on_page*$page_num) - $preview_post_on_page;
 
-        $query = "
-        SELECT *
-        FROM
-            `posts_list` AS post
-        ORDER BY id DESC
-        LIMIT {$start}, {$preview_post_on_page}
-		";
-
-        return self::find_by_sql($query);
+        return self::find('all',
+            [
+                'order' => 'id desc',
+                'limit' => $preview_post_on_page, 'offset' => $start
+            ]
+        );
     }
 
     public static function getPreviewPagesCount()

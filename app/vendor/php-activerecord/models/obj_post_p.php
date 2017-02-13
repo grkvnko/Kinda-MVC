@@ -16,11 +16,11 @@ class obj_post_p extends obj_post
             post.pics_array,
             GROUP_CONCAT( /* block lang for tags */
                 DISTINCT IFNULL(tag_local_lang.tag, tag_default_lang.tag)
-                ORDER BY tags.tag_id
+                ORDER BY tags.attr_id
                 ASC SEPARATOR ',') AS tagsNameArray,
             GROUP_CONCAT( /* block lang for places */
                 DISTINCT IFNULL(place_local_lang.place, place_default_lang.place)
-                ORDER BY places.place_id
+                ORDER BY places.attr_id
                 ASC SEPARATOR ',') AS placesNameArray,
             IFNULL(post_text_local_lang.post_text, post_text_default_lang.post_text) AS post_text,
             IFNULL(post_text_local_lang.preview_text, post_text_default_lang.preview_text) AS preview_text,
@@ -36,18 +36,18 @@ class obj_post_p extends obj_post
             LEFT JOIN `obj_post_p_tags` AS tags /* tags */
                 ON tags.post_id = post.post_id
             LEFT JOIN `spr_tags` AS tag_default_lang /* block lang for tags */
-                ON tags.tag_id = tag_default_lang.tag_id
+                ON tags.attr_id = tag_default_lang.attr_id
                 and tag_default_lang.lang = 'ru'
             LEFT JOIN `spr_tags` AS tag_local_lang
-                ON tags.tag_id = tag_local_lang.tag_id
+                ON tags.attr_id = tag_local_lang.attr_id
                 and tag_local_lang.lang = '{$local_language}'
             LEFT JOIN `obj_post_p_places` AS places /* places */
                 ON places.post_id = post.post_id
             LEFT JOIN `spr_places` AS place_default_lang /* block lang for tags */
-                ON places.place_id = place_default_lang.place_id
+                ON places.attr_id = place_default_lang.attr_id
                 and tag_default_lang.lang = 'ru'
             LEFT JOIN `spr_places` AS place_local_lang
-                ON places.place_id = place_local_lang.place_id
+                ON places.attr_id = place_local_lang.attr_id
                 and place_local_lang.lang = '{$local_language}'
             WHERE 
                 post.post_id = {$post_id} 
@@ -70,7 +70,7 @@ class obj_post_p extends obj_post
             post.pics_prev_array,
             GROUP_CONCAT(
                 DISTINCT IFNULL(tag_local_lang.tag, tag_default_lang.tag) 
-                ORDER BY tags.tag_id 
+                ORDER BY tags.attr_id 
                 ASC SEPARATOR ',') AS tagsNameArray,
             IFNULL(post_text_local_lang.preview_text, post_text_default_lang.preview_text) AS preview_text
         FROM
@@ -78,10 +78,10 @@ class obj_post_p extends obj_post
             LEFT JOIN `obj_post_p_tags` AS tags
                 ON tags.post_id = post.post_id
             LEFT JOIN `spr_tags` AS tag_default_lang /* block lang for tags*/
-                ON tags.tag_id = tag_default_lang.tag_id
+                ON tags.attr_id = tag_default_lang.attr_id
                 and tag_default_lang.lang = 'ru'
             LEFT JOIN `spr_tags` AS tag_local_lang
-                ON tags.tag_id = tag_local_lang.tag_id
+                ON tags.attr_id = tag_local_lang.attr_id
                 and tag_local_lang.lang = '{$local_language}'
             LEFT JOIN `obj_post_p_text` AS post_text_default_lang /* block lang for preview text*/
                 ON post.post_id = post_text_default_lang.post_id

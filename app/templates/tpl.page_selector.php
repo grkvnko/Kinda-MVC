@@ -1,3 +1,5 @@
+<? if (isset($view_data['page_way'])): ?>
+
 <?php
 
 if (!isset($TPL_PAGE_cur_page)) {
@@ -48,3 +50,5 @@ if (!isset($TPL_PAGE_cur_page)) {
         ?>
     </ul>
 </div>
+
+<? endif; ?>

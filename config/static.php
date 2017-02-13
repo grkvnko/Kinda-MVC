@@ -6,7 +6,7 @@ class Config
 
     public static $db = [
         'user'    => 'root',
-        'pass'    => '12341234',
+        'pass'    => '123412341',
         'db_name' => 'grk_beta',
         'host'    => 'localhost'
     ];

@@ -53,8 +53,9 @@
 	height: 100%;
 }
 
-.top_gallery_div a:hover{
+.top_gallery_div a:hover {
 	background: url(../img/top_back.png);
+	cursor: zoom-in;
 }
 
 .top_gallery_text {
