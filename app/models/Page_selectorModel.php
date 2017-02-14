@@ -4,7 +4,7 @@ class Page_selectorModel extends Model
 {
     protected function getData($vars = [])
     {
-        if (!isset($vars['page_num'])) {
+        if ( !isset($vars['page_num']) || $vars['page_num']==0 ) {
             return [ 'page_way' => null ];
         }
 

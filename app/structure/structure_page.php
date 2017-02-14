@@ -6,7 +6,7 @@ class structure_page
         'components' => [
             'Header',
             'Separator',
-            'Page_selector',
+            //'Page_selector',
             'Preview_Posts',
             'Page_selector',
             'Footer'

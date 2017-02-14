@@ -32,6 +32,6 @@ class DefaultController extends Controller
         $this->outView(($routes_arr[0] == 1) ? 'default' : 'page',
                          ['page_num' => normalizePage($routes_arr[0]),
                           'page_way' => 'page', 'page_source' => 'posts_list',
-                          'show_title' => ($routes_arr[0] == 1) ? true : false]);
+                          'show_title' => ($routes_arr[0] == 1) ? true : true]);
     }
 }
