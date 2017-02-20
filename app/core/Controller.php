@@ -65,7 +65,13 @@ abstract class Controller
                 $view_data = $this->getData($structure_name, $models_var);
                 $this->renderView($structure_name, $view_data);
             } catch (ErrGetModelDataException $e) {
-                $view_data = $this->getData('error404', ['page_num' => 1]);
+                $view_data = $this->getData('error404',
+                    [
+                        'page_num' => 1,
+                        'page_source' => 'posts_list',
+                        'page_way' => 'page'
+                    ]
+                );
                 $this->renderView('error404', $view_data);
             }
         } catch (ActiveRecord\DatabaseException $e) {

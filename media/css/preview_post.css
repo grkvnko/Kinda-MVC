@@ -70,7 +70,7 @@
 }
 
 .preview_post_tag:hover {
-	background-color: #000;
+	background-color: #111;
 }
 
 
@@ -140,7 +140,7 @@
 }
 
 #page_selector .a_page:hover {
-	background-color: #333;
+	background-color: #444;
 	color: #fff;
 }
 
@@ -203,7 +203,7 @@
 
 .tags_cloud a:hover {
     color: #fff;
-    background-color: #000;
+    background-color: #333;
 }
 
  

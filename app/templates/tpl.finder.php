@@ -1,7 +1,7 @@
 <?php
 Translate::setWords([
     'PhotosCount' => ['en' => 'total photos in post', 'ru' => 'всего фоточек'],
-    'SEARCH' => ['en' => 'search for', 'ru' => 'поиск по'],
+    'SEARCH' => ['en' => 'search for tags', 'ru' => 'поиск по тегам'],
     'NotFound' => ['en' => 'nothing found...', 'ru' => 'ничего не найдено'],
     'PLACES' => ['en' => 'PLACES ~', 'ru' => 'МЕСТА ~'],
     'TAGS' => ['en' => 'TAGS ~', 'ru' => 'ТЕГИ ~'],
@@ -12,15 +12,15 @@ Translate::setWords([
 <? if ( isset($view_data['search_subject']) ): ?>
 
     <div style="height: 30px;">&nbsp;</div>
-    <h2 class="section_title">ПОИСК ПО ТЕГАМ</h2>
+    <h2 class="section_title"><?php Translate::getWord('SEARCH'); ?></h2>
     <div class="tags_cloud">
         <em style="font-size: 28px"><?php Translate::getWord($view_data['search_subject_type']); ?></em>
         <h1 class="search_h1"><?=$view_data['search_subject']?></h1>
     </div>
-    <div style="height: 20px;">&nbsp;</div>
+
 
     <? if ( count($view_data['found_data']) > 0 ): ?>
-
+    <div style="height: 20px;">&nbsp;</div>
     <div id="post_prev">
 
     <?php foreach ($view_data['found_data'] as $preview_posts): ?>
@@ -57,7 +57,7 @@ Translate::setWords([
 <? else: ?>
 
     <div style="height: 30px;">&nbsp;</div>
-    <h2 class="section_title">ПОИСК ПО ТЕГАМ</h2>
+    <h2 class="section_title"><?php Translate::getWord('SEARCH'); ?></h2>
 
     <div class="tags_cloud"><em><?php Translate::getWord('PLACES'); ?></em>
     <? foreach ($view_data['places'] as $places): ?>

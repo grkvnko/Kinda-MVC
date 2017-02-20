@@ -19,7 +19,14 @@ class GalleryModel extends Model
             }
             $reg[] = $take_post_ID;
 
-            $post_post_data = obj_post_p::find($take_post_ID);
+            try {
+                $post_post_data = obj_post_p::find($take_post_ID);
+            } catch (ActiveRecord\RecordNotFound $e) {
+                $i--;
+                array_pop($reg);
+                continue;
+            }
+
             $take_post_pic_id = explode(',', $post_post_data->pics_prev_array)[0];
             try {
                 $pic_obj = photostrm_pics::find($take_post_pic_id);
