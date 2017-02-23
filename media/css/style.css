@@ -55,7 +55,7 @@
 	text-align: center;
 	padding: 0;
 	margin: 0 0 14px 0;
-	font: 19px 'Roboto Condensed';
+	font: 19px 'Roboto Condensed', 'Tahoma';
 	color: lightslategrey;
 	letter-spacing: 3px;
 }
@@ -189,9 +189,18 @@ article {
  
 @media only screen and (min-width: 770px) and (max-width: 1200px) {
 
+	#recommend {
+		width: calc(95% - 20px);
+		margin-left: calc(2.5% + 10px);
+	}
+
 	footer {
 		width: calc(95% - 20px);
 		margin-left: calc(2.5% + 10px);
+	}
+
+	.reco span {
+		font: bold 16px 'PT Sans Narrow';
 	}
 
 }
@@ -209,5 +218,32 @@ article {
         margin: 0;
     }
 
+	.reco span {
+		font: bold 16px 'PT Sans Narrow';
+	}
+
+	#recommend {
+		width: calc(100% - 20px);
+		margin-left: 10px;
+	}
+
 }
 
+@media only screen and (max-width: 700px) {
+
+	#recommend {
+		width: 100%;
+		margin: 0 0 0 0;
+	}
+
+	.reco, .reco:last-child {
+		width: 100%;
+		margin: 0 0 10px 0;
+		padding: 0 0 0 0;
+	}
+
+	.reco span {
+		font: bold 16px 'PT Sans Narrow';
+	}
+
+}
