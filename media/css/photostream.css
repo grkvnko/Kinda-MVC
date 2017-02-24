@@ -10,3 +10,25 @@
     height: 100%;
     background-color: #fff;
 }
+
+@media only screen and (min-width: 770px) and (max-width: 1200px) {
+    #photostream_page {
+        width: calc(95% - 20px);
+        margin: 20px 0 20px 0;
+        margin-left: calc(2.5% + 10px);
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    #photostream_page {
+        width: calc(100% - 10px);
+        margin: 20px 0 20px 5px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #photostream_page {
+        width: calc(100% - 10px);
+        margin: 20px 0 20px 5px;
+    }
+}

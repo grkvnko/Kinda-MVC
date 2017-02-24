@@ -19,7 +19,11 @@ class GalleryModel extends Model
             }
             $reg[] = $taken_post_ID;
 
-            $taken_post_pic_id = explode(',', $taken_post[0]->pics_prev_array)[0];
+            $taken_post_pics = explode(',', $taken_post[0]->pics_prev_array);
+            $pic_rand_id = mt_rand(0, count($taken_post_pics)-1);
+            $taken_post_pic_id = $taken_post_pics[$pic_rand_id];
+            
+            [0];
             try {
                 $pic_obj = photostrm_pics::find($taken_post_pic_id);
                 $taken_post_pic_part = $pic_obj->part;

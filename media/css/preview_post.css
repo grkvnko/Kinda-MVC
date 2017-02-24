@@ -20,9 +20,6 @@
 .preview_post_title span {	
 	display: block;
 	font: 17px 'Arial';
-	/*border-left: 3px solid #ffc374;*/
-	/*border-top: 3px solid #ffc374;*/
-	/*background: url(4.jpg) no-repeat;*/
 }
 
 .preview_post_link {	
@@ -61,7 +58,7 @@
 
 .preview_post_tag {
 	display: inline-block;
-	font: 11px 'Roboto Condensed', 'Arial';
+	font: 11px 'Roboto Condensed', Helvetica, 'Arial';
 	padding: 3px 6px 3px 6px;
 	background-color: #ff7e00;
 	color: #fff;
@@ -185,7 +182,7 @@
 .tags_cloud em {
     display: inline-block;
     text-align: center;
-    font: 20px 'Roboto Condensed', 'Arial';
+    font: 20px 'Roboto Condensed', 'Helvetica', 'Arial';
     color: #9C4800;
     background-color: #ffcb92;
     padding: 2px 10px 2px 10px;
@@ -194,7 +191,7 @@
 
 .tags_cloud a {
     display: inline-block;
-    font: 20px 'Roboto Condensed', 'Arial';
+    font: 20px 'Roboto Condensed', 'Helvetica', 'Arial';
     color: #fff;
     background-color: #ff7e00;
     padding: 2px 10px 2px 10px;
@@ -243,3 +240,32 @@
 
 }
 
+@media only screen and (max-width: 500px) {
+
+    .preview_post_title {
+        width: calc(100% - 10px);
+        display: block;
+        text-align: right;
+        padding: 0;
+        margin: 0 0 0 5px;
+        vertical-align: top;
+    }
+
+    .preview_post_title span {
+        text-align: center;
+        display: block;
+        font: 15px 'Arial';
+    }
+
+    .preview_post_gallery {
+        display: block;
+    }
+
+    .preview_post_gallery_text {
+        margin: 0;
+        margin-right: 5px;
+        text-align: right;
+        color: #888;
+        font: 8px Verdana, Helvetica, Sans-serif;
+    }
+}

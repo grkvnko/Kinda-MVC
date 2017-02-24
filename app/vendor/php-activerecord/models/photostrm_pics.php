@@ -3,7 +3,7 @@
 class photostrm_pics extends ActiveRecord\Model
 {
     static $table_name = 'photostrm_pics';
-    const preview_pics_on_page = 24;
+    const preview_pics_on_page = 27;
 
     public static function getPreviewPicsByPage($page_num)
     {
