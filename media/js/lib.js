@@ -1,10 +1,11 @@
 var dateNotReady = true;
 
 var shareLinks = {
-    'fb': {'url':'https://vk.com/share.php?url=', 'color': ['#475995', 'white']},
+    'g+': {'url':'https://plus.google.com/share?url=', 'color': ['#dd4a40', 'white']},
+    'fb': {'url':'https://www.facebook.com/sharer/sharer.php?u=', 'color': ['#475995', 'white']},
     'vk': {'url':'https://vk.com/share.php?url=', 'color': ['#5d7294', 'white']},
     'tw': {'url':'https://twitter.com/intent/tweet?url=', 'color': ['#76aaeb', 'white']},
-    'ok': {'url':'https://twitter.com/intent/tweet?url=', 'color': ['#ed7c20', 'white']}
+    'ok': {'url':'https://connect.ok.ru/offer?url=', 'color': ['#ed7c20', 'white']}
 };
 
 Date.prototype.getMonthName = function () {
