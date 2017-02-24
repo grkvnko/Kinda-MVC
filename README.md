@@ -1,9 +1,9 @@
-[grkvnko.me](grkvnko.me)
+[grkvnko.me](http://grkvnko.me/)
 
 # Мой персональный фотоблог.
 
 ## В проекте так же используются:
-- [PHP ActiveRecord](www.phpactiverecord.org)
-- [JQuery](jquery.com)
-- [Justified Gallery](miromannino.github.io/Justified-Gallery)
-- [BlocksIt.js](www.inwebson.com/demo/blocksit-js)
+- [PHP ActiveRecord](http://www.phpactiverecord.org/)
+- [JQuery](https://jquery.com)
+- [Justified Gallery](https://miromannino.github.io/Justified-Gallery/)
+- [BlocksIt.js](http://www.inwebson.com/demo/blocksit-js/)

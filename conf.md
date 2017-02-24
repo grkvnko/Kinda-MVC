@@ -1,7 +1,7 @@
 
 ##Настройки для создания единой точки входа на сайт и запрета доступа к php файлам
 
-###conf for apache
+###config for apache
 
 файл .htaccess корневой директории
 
@@ -24,7 +24,7 @@
     </VirtualHost>
 
 
-###conf for nginx
+###config for nginx
 
 добавить в кофиг nginx'а в секцию server {}
 
