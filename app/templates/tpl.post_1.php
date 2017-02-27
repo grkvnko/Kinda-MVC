@@ -1,3 +1,20 @@
+<script language="JavaScript">
+
+    function getCol() {
+        if ($(window).width() < 680) { return 1; }
+        else { return 2; }
+    }
+
+    $(document).ready(function () {
+        $(window).load(function () {
+            //$('.post_text').BlocksIt({numOfCol: getCol(), offsetX: 0, offsetY: 0});
+        }).resize(function () {
+            $('.post_text').BlocksIt({numOfCol: getCol(), offsetX: 0, offsetY: 0});
+        });
+    });
+
+</script>
+
 <div class="container_post">
     <!--<div id="post_close"><a href="" onclick="window.history.back();"></a></div>-->
     <h1><?php echo $view_data['title'] ?></h1><div id="post_date">• <span class="js_date"><?php echo $view_data['date'] ?></span> •</div>
@@ -25,20 +42,3 @@
     </div>
     <div class="after_post share"></div>
 </div>
-
-<script language="JavaScript">
-
-    function getCol() {
-        if ($(window).width() < 680) { return 1; }
-        else { return 2; }
-    }
-
-    $(document).ready(function () {
-        $(window).load(function () {
-            $('.post_text').BlocksIt({numOfCol: getCol(), offsetX: 0, offsetY: 0});
-        }).resize(function () {
-            $('.post_text').BlocksIt({numOfCol: getCol(), offsetX: 0, offsetY: 0});
-        });
-    });
-
-</script>

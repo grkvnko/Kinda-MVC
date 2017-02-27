@@ -50,17 +50,29 @@
 
 .grid {
 	text-align: center;
+	vertical-align: top;
 	margin: 0;
+	padding: 0;
+	display: inline-block;
+	width: 49.5%;
 }
 
 .grid p {
 	font: 17px "Lora";
 	display: block;
 	text-align: justify;
-	margin: 0 auto 15px auto;
+	margin: 0 auto 10px auto;
 	width: 97%;
 }
 
+.grid:nth-child(3n) {
+
+}
+/*
+.grid:nth-child(even) {
+	display: table-cell;
+}
+*/
 .grid img {
 	margin: 0 0 20px 0;
 	width: 97%;
@@ -175,8 +187,18 @@
 	.grid p {
 		font: 16px "Lora";
 		margin: 0 auto 10px auto;
-
+		display: block;
+		text-align: justify;
 		width: 95%;
+	}
+
+	.grid {
+		text-align: center;
+		vertical-align: top;
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		width: 100%;
 	}
 
 	.container_post h1 {

@@ -14,6 +14,7 @@ class obj_post_p extends obj_post
             post.view,
             post.date,
             post.pics_array,
+            post.pics_prev_array,
             GROUP_CONCAT( /* block lang for tags */
                 DISTINCT IFNULL(tag_local_lang.tag, tag_default_lang.tag)
                 ORDER BY tags.attr_id
@@ -143,15 +144,24 @@ class obj_post_p extends obj_post
         $post_data['places']       = [];
         $post_data['tags']         = [];
         $post_data['post_pics']    = [];
+        $post_data['post_cover']   = '';
         
         if (strlen($post_records[0]->pics_array) > 0) {
             $pics_arr = explode(",", $post_records[0]->pics_array);
             foreach ($pics_arr as $pic_id) {
                 try {
                     $current_pic = photostrm_pics::find($pic_id);
-                    $post_data['post_pics'][] = $current_pic->part . "/" . $current_pic->pic_id;
+                    $post_data['post_pics'][] = $current_pic->part . '/' . $current_pic->pic_id;
                 } catch (ActiveRecord\RecordNotFound $e) {};
             }
+        }
+
+        if (strlen($post_records[0]->pics_prev_array) > 0) {
+            $pics_arr = explode(",", $post_records[0]->pics_prev_array);
+            try {
+                $current_pic = photostrm_pics::find($pics_arr[0]);
+                $post_data['post_cover'] = $current_pic->part . '/' . $current_pic->pic_id;
+            } catch (ActiveRecord\RecordNotFound $e) {};
         }
 
         $tags = explode(',', $post_records[0]->tagsnamearray);

@@ -14,6 +14,7 @@ Translate::setWords([
     <div style="height: 30px;">&nbsp;</div>
     <h2 class="section_title"><?php Translate::getWord('SEARCH'); ?></h2>
     <div class="tags_cloud">
+        <a href="<?= Config::getSiteURL() ?>search/" class="tag_back">←</a>
         <em style="font-size: 28px"><?php Translate::getWord($view_data['search_subject_type']); ?></em>
         <h1 class="search_h1"><?=$view_data['search_subject']?></h1>
     </div>

@@ -23,6 +23,7 @@ function closeImg() {
 }
 
 $(document).ready(function () {
+    
     if (dateNotReady) {
         $('.js_date').each(function (i, elem) {
             var postDate = new Date($(this).text());
@@ -36,6 +37,7 @@ $(document).ready(function () {
         $('body').prepend('<div id="popup_img"><div id="popup_img_src"></div></div>');
         $('#popup_img_src').css('background-image', 'url(' + this.getAttribute("href") + ')');
         $("body").css("overflow","hidden");
+        $("body").css("overflow-y","scroll");
         return false;
     });
 
