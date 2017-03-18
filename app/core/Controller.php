@@ -7,12 +7,19 @@ abstract class Controller
         echo "action ", get_class($this);
     }
 
+    /**
+     * Получает данные со всех моделей входяших в структуру страницы ($structure_name)
+     * и возвращает данные в виде массива.
+     *
+     * @param string $structure_name
+     * @param array $models_var
+     * @return array
+     */
     private function getData($structure_name = 'default', $models_var = [])
     {
         $structure = 'structure_' . $structure_name;
         $view_data = [];
 
-        // invalidnost
         $current_model = new BodyModel();
         $view_data['page_title'] = $current_model->getTitle();
         $view_data['og'] = $models_var['og'];
@@ -35,6 +42,12 @@ abstract class Controller
         return $view_data;
     }
 
+    /**
+     * Последовательно выводит все представления входящие в структуру страницы ($structure_name) 
+     *
+     * @param string $structure_name
+     * @param array $view_data
+     */
     private function renderView($structure_name = 'default', $view_data = [])
     {
         $structure = 'structure_' . $structure_name;
@@ -58,6 +71,12 @@ abstract class Controller
         BodyView::render('footer');
     }
 
+    /**
+     * Вывод готовой страницы по имени структуры ($structure_name)
+     * 
+     * @param string $structure_name
+     * @param array $models_var
+     */
     public function outView($structure_name = 'default', $models_var = [])
     {
         try {

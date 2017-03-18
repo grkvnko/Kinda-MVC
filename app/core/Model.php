@@ -2,16 +2,35 @@
 
 abstract class Model
 {
-    protected $data = [];
-    protected $page_title = "";
-    protected $view;
-    public $og = [];
+    /**
+     * Название компонента
+     */
     static $module_name;
+
+    /**
+     * Данные модели для вывода
+     */
+    protected $data = [];
+
+    /**
+     * Заголовок всей страницы
+     */
+    protected $page_title = "";
+
+    /**
+     * Вид принадлежаший модели
+     */
+    protected $view;
+
+    /**
+     * Данные для OpenGraph
+     * @var array
+     */
+    public $og = [];
 
     public function __construct(Array $vars = [])
     {
         $this->data = $this->getData($vars);
-        //$this->view =
     }
 
     protected function getData(Array $vars)
