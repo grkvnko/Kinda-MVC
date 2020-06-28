@@ -1,6 +1,7 @@
-# Мой персональный фотоблог.
+# Kinda-MVC
+Small PHP MVC-framework or CMS (not defined yet).
 
-## В проекте так же используются:
+#### Used tools:
 - [PHP ActiveRecord](http://www.phpactiverecord.org/)
 - [JQuery](https://jquery.com)
 - [Justified Gallery](https://miromannino.github.io/Justified-Gallery/)
