@@ -1,8 +1,3 @@
-<?php
-Translate::setWords([
-    'RELATED CONTENT' => ['en' => 'RELATED CONTENT', 'ru' => 'ЧИТАЙТЕ ТАКЖЕ']
-]);
-?>
 <article id="recommend">
     <h2 class="h2_caption"><?= Translate::getWord('RELATED CONTENT') ?></h2>
 <?

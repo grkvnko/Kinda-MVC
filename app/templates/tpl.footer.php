@@ -1,5 +1,4 @@
 </main>
 <footer>
-    <span>© GRKVNKO</span>
-    <a href="" class="a_underline">grkvnko@gmail.com</a>
+    <span>Kinda-MVC demo site<br>© <a href="https://grkvnko.ru">grkvnko.ru</a></span>
 </footer>

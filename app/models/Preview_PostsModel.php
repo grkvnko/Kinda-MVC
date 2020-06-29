@@ -27,7 +27,7 @@ class Preview_PostsModel extends Model
             'show_title' => $vars['show_title'],
         ];
 
-        $this->setTitle(" (страница {$page_num})");
+        $this->setTitle(" (".Translate::getWordS('Page')." {$page_num})");
 
         return $view_data;
     }

@@ -46,7 +46,7 @@ class obj_post_p extends obj_post
                 ON places.post_id = post.post_id
             LEFT JOIN `spr_places` AS place_default_lang /* block lang for tags */
                 ON places.attr_id = place_default_lang.attr_id
-                and tag_default_lang.lang = 'ru'
+                and place_default_lang.lang = 'ru'
             LEFT JOIN `spr_places` AS place_local_lang
                 ON places.attr_id = place_local_lang.attr_id
                 and place_local_lang.lang = '{$local_language}'

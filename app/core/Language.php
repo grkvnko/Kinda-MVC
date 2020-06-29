@@ -29,4 +29,12 @@ class Language
         }
         return false;
     }
+
+    public static function getLangLinksList()
+    {
+        foreach (self::$languages as $name => $language) {
+            echo '<a class="header_menu_lang" href="', Config::getSiteURL(), 'lang/', $language, '">', $name , '</a>';
+        }
+        return true;
+    }
 }

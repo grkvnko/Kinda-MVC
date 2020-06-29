@@ -1,14 +1,3 @@
-<?php
-Translate::setWords([
-    'PhotosCount' => ['en' => 'total photos in post', 'ru' => 'всего фоточек'],
-    'SEARCH' => ['en' => 'search for tags', 'ru' => 'поиск по тегам'],
-    'NotFound' => ['en' => 'nothing found...', 'ru' => 'ничего не найдено'],
-    'PLACES' => ['en' => 'PLACES ~', 'ru' => 'МЕСТА ~'],
-    'TAGS' => ['en' => 'TAGS ~', 'ru' => 'ТЕГИ ~'],
-    'place' => ['en' => 'PLACE ~', 'ru' => 'МЕСТО ~'],
-    'tag' => ['en' => 'TAG ~', 'ru' => 'ТЕГ ~']
-]);
-?>
 <? if ( isset($view_data['search_subject']) ): ?>
 
     <div style="height: 30px;">&nbsp;</div>
@@ -45,6 +34,7 @@ Translate::setWords([
             </div>
             <div class="preview_post_gallery_text"><?= Translate::getWord('PhotosCount') ?> <?= $preview_posts['total_photos'] ?></div>
         </div>
+        <div style="clear: both"></div>
     </div>
     </div>
     <?php endforeach; ?>

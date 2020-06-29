@@ -1,9 +1,3 @@
-<?php
-Translate::setWords([
-    'PhotosCount' => ['en' => 'total photos in post', 'ru' => 'всего фоточек']
-]);
-?>
-
 <div class="prev_post">
     <div class="preview_post_title">
         <div class="preview_post_date js_date"> <?= $preview_posts['date'] ?> </div>
@@ -23,4 +17,5 @@ Translate::setWords([
         </div>
         <div class="preview_post_gallery_text"><?= Translate::getWord('PhotosCount') ?> <?= $preview_posts['total_photos'] ?></div>
     </div>
+    <div style="clear: both"></div>
 </div>

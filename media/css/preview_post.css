@@ -10,11 +10,12 @@
 	
 .preview_post_title {
 	width: 40%;
-	display: table-cell;
+	float: left;
 	padding-top: 5px;
 	text-align: right;
 	padding-right: 15px;
 	vertical-align: top;
+	box-sizing: border-box;
 }
 
 .preview_post_title span {	
@@ -35,7 +36,8 @@
 
 
 .preview_post_gallery {
-	display: table-cell;
+	float: right;
+	width: 60%;
 }
 
 .preview_post_gallery_text {
@@ -64,10 +66,12 @@
 	color: #fff;
 	font-weight: bold;
 	margin: 1px;
+	transition: 0.3s;
 }
 
 .preview_post_tag:hover {
 	background-color: #111;
+	transition: 0.3s;
 }
 
 
@@ -103,10 +107,12 @@
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
 	column-break-inside: avoid;
+	transition: 0.4s;
 }
 
 .prev_post:hover {
 	background-color: #d9d9d9;
+	transition: 0.4s;
 }
 
 #post_prev>div {
@@ -148,11 +154,13 @@
 	margin-left: 3px;
 	margin-right: 3px;
 	/*border-bottom: 2px solid #c1c1c1;*/
+	transition: 0.3s;
 }
 
 #page_selector .a_page:hover {
 	background-color: #444;
 	color: #fff;
+	transition: 0.3s;
 }
 
 #page_selector em {
@@ -210,11 +218,13 @@
     background-color: #ff7e00;
     padding: 2px 10px 2px 10px;
     margin-bottom: 4px;
+	transition: 0.3s;
 }
 
 .tags_cloud a:hover {
     color: #fff;
     background-color: #333;
+	transition: 0.3s;
 }
 
 .tags_cloud .tag_back {

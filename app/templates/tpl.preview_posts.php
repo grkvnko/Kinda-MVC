@@ -1,7 +1,4 @@
 <?php
-Translate::setWords([
-    'PUBLICATION' => ['en' => 'ALL PUBLICATION', 'ru' => 'ВСЕ ПУБЛИКАЦИИ']
-]);
 $vars['show_title'] = (isset($vars['show_title']) ? $vars['show_title'] : true);
 ?>
 <?php if ($view_data['show_title']): ?>

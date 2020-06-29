@@ -11,14 +11,6 @@
         }).resize(function () {
             $('.post_text').BlocksIt({numOfCol: getCol(), offsetX: 0, offsetY: 0});
         });
-
-        VK.init({
-            apiId: 5904424,
-            onlyWidgets: true
-        });
-
-        VK.Widgets.Comments('vk_comments', {limit: 15, attach: "photo"}, 321);
-
     });
 
 </script>
@@ -49,5 +41,4 @@
         ?>
     </div>
     <div class="after_post share"></div>
-    <div id="vk_comments"></div>
 </div>

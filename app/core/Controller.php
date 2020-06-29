@@ -94,7 +94,8 @@ abstract class Controller
                 $this->renderView('error404', $view_data);
             }
         } catch (ActiveRecord\DatabaseException $e) {
-            $this->renderView('error', $this->getData('error'));
+            $this->renderView('error', $this->getData('error') );
+            echo $e->getMessage();
         }
     }
 }
